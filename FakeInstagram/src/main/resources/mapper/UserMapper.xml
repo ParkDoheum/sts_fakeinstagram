@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itkr.fakeinsta.user.UserMapper">
+	<insert id="join" parameterType="user">
+		INSERT INTO t_user
+		(uid, upw, nick_nm)
+		VALUES
+		(#{uid}, #{upw}, #{nick_nm})
+	</insert>
+	
+	<select id="getUser" parameterType="user" resultType="user">
+		SELECT * FROM t_user
+		WHERE uid = #{uid}
+	</select>
+</mapper>
